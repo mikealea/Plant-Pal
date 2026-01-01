@@ -15,8 +15,15 @@ export interface GroundingMetadata {
 
 export interface PlantAnalysisResult {
   text: string;
+  commonName?: string;
+  scientificName?: string;
   groundingMetadata?: GroundingMetadata;
-  videoUri?: string; // Added for Veo results
+  videoUri?: string;
+}
+
+export interface ChatMessage {
+  role: 'user' | 'model';
+  text: string;
 }
 
 export enum AppState {
@@ -37,15 +44,15 @@ export type UserRole = 'user' | 'admin';
 export type SubscriptionPlan = 'free' | 'monthly' | 'lifetime';
 
 export interface User {
-  id: string; // Added ID for reliable updates
+  id: string;
   name: string;
   email: string;
   role: UserRole;
   avatar?: string;
-  password?: string; // For mock auth
+  password?: string;
   joinedDate?: string;
   plan: SubscriptionPlan;
-  scansRemaining: number; // For free tier (-1 for unlimited)
+  scansRemaining: number;
 }
 
 export type ViewMode = 'scanner' | 'admin_dashboard';
