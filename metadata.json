@@ -1,0 +1,7 @@
+{
+  "name": "Plant Pal - AI Plant Identifier",
+  "description": "Identify plants instantly using Gemini 2.5 Flash with Google Search grounding for accurate, up-to-date care tips and scientific data.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
